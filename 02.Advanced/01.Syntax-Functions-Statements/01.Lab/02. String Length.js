@@ -1,4 +1,4 @@
-function solution(str1, str2, str3) {
+function solve(str1, str2, str3) {
     allStrings = "";
     const listOfStrings = Array(str1, str2, str3);
     function concatenate(currentString) {
@@ -13,5 +13,5 @@ function solution(str1, str2, str3) {
     console.log(averageCount(allStrings));
   }
 
-  //solution('chocolate', 'ice cream', 'cake')
-  //solution('pasta', '5', '22.3')
+  //solve('chocolate', 'ice cream', 'cake')
+  //solve('pasta', '5', '22.3')

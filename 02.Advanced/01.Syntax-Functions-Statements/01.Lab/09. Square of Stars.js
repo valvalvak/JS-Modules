@@ -1,15 +1,16 @@
-function solve(param) {
-    if (param) {
-        count = Number(param)
-        result = "*".repeat(count)
-        for (let i = count; i < count; i++) {
-            console.log(`${result}`)
-        }
+function solve(givenNumber) {
+    if (givenNumber) {
+        count = Number(givenNumber);
+    } else {
+        count = 5;
+    }
+    let result = new Array(count).fill("*");
+    for (let _ of Array(count)) {
+        console.log(`${result.join(" ")}`);
     }
 
 }
-
-solve(1);
-solve(2);
-solve(5);
-solve();
+// solve(1);
+// solve(2);
+// solve(5);
+// solve();

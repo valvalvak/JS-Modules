@@ -1,11 +1,21 @@
-function solve(year, month, day) {
-    day--;
-    const theBigDay = new Date(year, month, day);
-    let y = theBigDay.getFullYear();
-    let m = theBigDay.getMonth();
-    let d = theBigDay.getDate();
-    console.log(`${y}-${m}-${d}`);
-}
+function solve(year, month, date) {
+    let leftMonthBool = false;
+    if (date - 1 === 0) {
+        month -= 1;
+        leftMonthBool = true;
+    };
+    const theDateBefore = new Date(year, month, date);
+    theDateBefore.setDate(date - 1);
+    
+    function printSolution(dateParams, leftMonthBool) {
+        let d = dateParams.getDate();
+        let m = dateParams.getMonth();
+        if (leftMonthBool) {
+            m += 1;
+        }
+        let y = dateParams.getFullYear();
+        return (`${y}-${m}-${d}`);
+    };
 
-solve(2020, 9, 1);
-solve(2016, 10, 1);
+    console.log(printSolution(theDateBefore, leftMonthBool));
+}

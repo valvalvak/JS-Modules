@@ -13,12 +13,14 @@ function solve(x1_, y1_, x2_, y2_,) {
         let [x1, y1] = deltas[i][0]
         let [x2, y2] = deltas[i][1]
         let result = calculateDistance(x1, y1, x2, y2)
+        let a = [x1, y1].join(", ")
+        let b = [x2, y2].join(", ")
         if (Number.isInteger(result)) {
-            console.log(`${x1, y1} to ${x2, y2} is valid`)
+            console.log(`{${a}} to {${b}} is valid`)
         } else {
-            console.log(`${x1, y1} to ${x2, y2} is invalid`)
+            console.log(`{${a}} to {${b}} is invalid`)
         }
     }
 }
-solve(3, 0, 0, 4);
-solve(2, 1, 1, 1);
+// solve(3, 0, 0, 4);
+// solve(2, 1, 1, 1);

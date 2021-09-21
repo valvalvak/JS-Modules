@@ -22,5 +22,5 @@ function solve(x1_, y1_, x2_, y2_,) {
         }
     }
 }
-// solve(3, 0, 0, 4);
-// solve(2, 1, 1, 1);
+solve(3, 0, 0, 4);
+solve(2, 1, 1, 1);

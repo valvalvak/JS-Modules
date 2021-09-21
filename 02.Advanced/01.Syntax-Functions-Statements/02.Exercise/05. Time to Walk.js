@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 function solve(steps, footprint, kmph) {
     function formatNumber(number) {
         if (number < 10) {
@@ -18,4 +19,3 @@ function solve(steps, footprint, kmph) {
 }
 // solve(4000, 0.60, 5);
 // solve(2564, 0.70, 5.5);
-

@@ -5,5 +5,5 @@ function solve(givenString){
     console.log(strArr.join(", ").toUpperCase())
 
 }
-// // solve("Hi, how are you?")
+solve("Hi, how are you?")
 // solve('hello')

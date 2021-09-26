@@ -1,9 +1,20 @@
+// function solve(array){
+//     let result = [];
+//     result.push(array[0]);
+//     array.forEach(element => {
+//         if (element > Math.max(...result)){
+//             result.push(element);
+//         }        
+//     });
+//     return result;
+// }
 function solve(array){
     let result = [];
-    result.push(array[0]);
+    let biggestNum = Number.MIN_SAFE_INTEGER
     array.forEach(element => {
-        if (element > Math.max(...result)){
+        if (element > biggestNum){
             result.push(element);
+            biggestNum = element;
         }        
     });
     return result;

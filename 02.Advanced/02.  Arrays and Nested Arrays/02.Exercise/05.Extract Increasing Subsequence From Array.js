@@ -8,14 +8,27 @@
 //     });
 //     return result;
 // }
+
+// function solve(array){
+//     let result = [];
+//     let biggestNum = Number.MIN_SAFE_INTEGER
+//     array.forEach(element => {
+//         if (element > biggestNum){
+//             result.push(element);
+//             biggestNum = element;
+//         }        
+//     });
+//     return result;
+// }
+
 function solve(array){
-    let result = [];
-    let biggestNum = Number.MIN_SAFE_INTEGER
-    array.forEach(element => {
+    let biggestNum = Number.MIN_SAFE_INTEGER;
+    const result = array.filter((element) => {
         if (element > biggestNum){
-            result.push(element);
             biggestNum = element;
-        }        
+            return true
+        }
+        return false
     });
     return result;
 }

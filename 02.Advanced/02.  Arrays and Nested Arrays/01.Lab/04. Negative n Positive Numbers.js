@@ -1,4 +1,3 @@
-
 // function solve(arr){
 //     let newArr = arr.sort((a, b) => a-b);
 //     newArr.forEach(element => {

@@ -15,5 +15,3 @@ function solve(n, k){
     return arr
 }
 // console.log(solve(6, 3));
-// console.log(solve(8, 2));
-

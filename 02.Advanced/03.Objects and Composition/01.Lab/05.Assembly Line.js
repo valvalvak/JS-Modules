@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 function createAssemblyLine() {
     const obj = {
         hasClima: (carObj) => {
@@ -65,3 +66,11 @@ function createAssemblyLine() {
 // myCar.checkDistance(0.2);
 // console.log(myCar);
 
+=======
+const assemblyLine = createAssemblyLine();
+
+const myCar = {
+    make: 'Toyota',
+    model: 'Avensis'
+};
+>>>>>>> 855cf9d9e83a24a6e631fd2c7007cb407fbcbeed

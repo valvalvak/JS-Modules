@@ -1,18 +1,12 @@
 function solve(obj){
-    obj = {
-        weight,
-        experience,
-        levelOfHydrated,
-        dizziness 
-      }
-    if (obj.dizziness == false){
-        obj.levelOfHydrated += 0.1*obj.weight*obj.experience;
+    if (obj.dizziness == true){
+        obj.levelOfHydrated += obj.weight*obj.experience*0.1;
         obj.dizziness = false;
     }
-    return obj
+    return obj;
 
 }
-console.log(solve({ weight: 80,
-    experience: 1,
-    levelOfHydrated: 0,
-    dizziness: true }));
+// console.log(solve({ weight: 80,
+//     experience: 1,
+//     levelOfHydrated: 0,
+//     dizziness: true }));

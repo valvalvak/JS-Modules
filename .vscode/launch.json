@@ -1,44 +1,55 @@
-{
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "Attach",
-            "port": 9229,
-            "request": "attach",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "type": "pwa-node"
-        },
-        {
-            "type": "java",
-            "name": "Attach",
-            "request": "attach",
-            "hostName": "localhost",
-            "port": "<debug port of the debuggee>"
-        },
-        {
-            "command": "npm start",
-            "name": "Run npm start",
-            "request": "launch",
-            "type": "node-terminal"
-        },
-        {
-            "name": "Python: Current File (Integrated Terminal)",
-            "type": "python",
-            "request": "launch",
-            "program": "${file}",
-            "console": "integratedTerminal"
-          },
-          {
-            "name": "Python: Current File (External Terminal)",
-            "type": "python",
-            "request": "launch",
-            "program": "${file}",
-            "console": "externalTerminal"
-          },
-    ]
-}
+// {
+//     // Use IntelliSense to learn about possible attributes.
+//     // Hover to view descriptions of existing attributes.
+//     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+//     "version": "0.2.0",
+//     "configurations": [
+        
+//         {
+//             "name": "Launch Program",
+//             "program": "${workspaceFolder}/app.js",
+//             "request": "launch",
+//             "skipFiles": [
+//                 "<node_internals>/**"
+//             ],
+//             "type": "pwa-node"
+//         },
+//         {"name":"Python: Current File","type":"python","request":"launch","program":"${file}","console":"integratedTerminal"},
+//         {
+//             "name": "Attach",
+//             "port": 9229,
+//             "request": "attach",
+//             "skipFiles": [
+//                 "<node_internals>/**"
+//             ],
+//             "type": "pwa-node"
+//         },
+//         {
+//             "type": "java",
+//             "name": "Attach",
+//             "request": "attach",
+//             "hostName": "localhost",
+//             "port": "<debug port of the debuggee>"
+//         },
+//         {
+//             "command": "npm start",
+//             "name": "Run npm start",
+//             "request": "launch",
+//             "type": "node-terminal"
+//         },
+//         {
+//             "name": "Python: Current File (Integrated Terminal)",
+//             "type": "python",
+//             "request": "launch",
+//             "program": "${file}",
+//             "console": "integratedTerminal"
+//           },
+//           {
+//             "name": "Python: Current File (External Terminal)",
+//             "type": "python",
+//             "request": "launch",
+//             "program": "${file}",
+//             "console": "externalTerminal"
+//           },
+//     ]
+// }

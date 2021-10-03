@@ -1,34 +1,34 @@
-function solve(array){
-    const operands = [];
-    let result = Number;
-    for (let element of array){
-        if (typeof element === "number"){
+function solve(array) {
+    const operands=[];
+    let result=Number;
+    for(let element of array) {
+        if(typeof element==="number") {
             operands.push(Number(element));
-        }else{
-            if (operands.length >= 2){
-                let b = operands.pop();
-                let a = operands.pop();
-                if (element == "+"){
-                    result = a + b;
+        } else {
+            if(operands.length>=2) {
+                let b=operands.pop();
+                let a=operands.pop();
+                if(element=="+") {
+                    result=a+b;
                     operands.push(result);
-                }else if (element == "-"){
-                    result = a - b;
+                } else if(element=="-") {
+                    result=a-b;
                     operands.push(result);
-                }else if (element == "*"){
-                    result = a * b;
+                } else if(element=="*") {
+                    result=a*b;
                     operands.push(result);
-                }else if (element == "/"){
-                    result = a / b;
+                } else if(element=="/") {
+                    result=a/b;
                     operands.push(result);
                 }
-            }else{
+            } else {
                 return console.log("Error: not enough operands!");
             }
         }
     }
-    if (operands.length > 1){
+    if(operands.length>1) {
         console.log("Error: too many operands!");
-    }else{
+    } else {
         console.log(result)
     }
 }

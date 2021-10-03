@@ -1,9 +1,9 @@
-function solve(array){
-    const result = {}
-    for (let i = 1; i< array.length; i+=2){
-        let product = array[i-1];
-        let value = Number(array[i]);
-        result[product] = value;
+function solve(array) {
+    const result={}
+    for(let i=1;i<array.length;i+=2) {
+        let product=array[i-1];
+        let value=Number(array[i]);
+        result[product]=value;
     }
     console.log(result)
 }

@@ -1,17 +1,17 @@
-function solve(array){
-    function splitString(stringToSplit, separator) {
+function solve(array) {
+    function splitString(stringToSplit,separator) {
         const arrayOfStrings = stringToSplit.split(separator);
         return arrayOfStrings
     }
     const townPopulation = {}
     const solutionSeparator = " <-> "
-    for (let currentString of array){
-        let [town, population] = splitString(currentString, solutionSeparator);
+    for(let currentString of array) {
+        let [town,population] = splitString(currentString,solutionSeparator);
         population = Number(population);
-        if (townPopulation[town] != undefined) { population += townPopulation[town]}
+        if(townPopulation[town] != undefined) {population += townPopulation[town]}
         townPopulation[town] = population
     }
-    for (let key in townPopulation){
+    for(let key in townPopulation) {
         console.log(`${key} : ${townPopulation[key]}`)
     }
 }

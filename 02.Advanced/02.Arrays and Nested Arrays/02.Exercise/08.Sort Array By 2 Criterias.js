@@ -2,9 +2,9 @@ function solve(array) {
     function len(x) {
         return x.length
     }
-    array.sort((a, b) => {
+    array.sort((a,b) => {
         let ascSort = len(a) - len(b);
-        if (!ascSort == 0) {
+        if(!ascSort == 0) {
             return ascSort;
         } else {
             return a.localeCompare(b);

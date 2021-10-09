@@ -1,8 +1,8 @@
-function factory(library, orders) {
+function factory(library,orders) {
     const result = [];
-    for (let order of orders) {
-        const current = Object.assign({}, order.template);
-        for (let part of order.parts) {
+    for(let order of orders) {
+        const current = Object.assign({},order.template);
+        for(let part of order.parts) {
             current[part] = library[part];
         }
         result.push(current);
@@ -10,13 +10,13 @@ function factory(library, orders) {
     return result;
 }
 const library = {
-    print: function () {
+    print: function() {
         console.log(`${this.name} is printing a page`);
     },
-    scan: function () {
+    scan: function() {
         console.log(`${this.name} is scanning a document`);
     },
-    play: function (artist, track) {
+    play: function(artist,track) {
         console.log(`${this.name} is playing '${track}' by ${artist}`);
     },
 };

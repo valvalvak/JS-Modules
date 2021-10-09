@@ -1,6 +1,6 @@
-function solve(numbers, k) {
+function solve(numbers,k) {
     let i = 0;
-    while (i < k){
+    while(i < k) {
         numbers.unshift(numbers.pop());
         i++;
     }

@@ -12,12 +12,12 @@
 // }
 
 function solve(arr) {
-    let solutionResult=[];
+    let solutionResult = [];
     for(const str of arr) {
-        let [name,level,items]=str.split(" / ");
-        level=Number(level);
-        items=items? items.split(", "):[];
-        let currentHero={name,level,items}
+        let [name,level,items] = str.split(" / ");
+        level = Number(level);
+        items = items ? items.split(", ") : [];
+        let currentHero = {name,level,items}
         solutionResult.push(currentHero)
     }
     console.log(JSON.stringify(solutionResult));

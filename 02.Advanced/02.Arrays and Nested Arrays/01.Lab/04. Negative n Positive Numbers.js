@@ -7,14 +7,14 @@
 
 function solve(givenArray) {
     let resultArray = [];
-    for (i = 0; i < givenArray.length; i++) {
-        if (givenArray[i] < 0) {
+    for(i = 0;i < givenArray.length;i++) {
+        if(givenArray[i] < 0) {
             resultArray.unshift(givenArray[i]);
-        }else{
+        } else {
             resultArray.push(givenArray[i]);
         }
     }
-    resultArray.forEach(element =>  console.log(element));
+    resultArray.forEach(element => console.log(element));
 }
 
 // solve([7, -2, 8, 9]);

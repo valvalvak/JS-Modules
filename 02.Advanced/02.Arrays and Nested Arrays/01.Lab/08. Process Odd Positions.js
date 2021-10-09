@@ -1,9 +1,9 @@
-function solve(mixedArray){
+function solve(mixedArray) {
     let result = [];
-    for (let i = 1; i < mixedArray.length; i+=2){
+    for(let i = 1;i < mixedArray.length;i += 2) {
         let value = mixedArray[i] * 2;
-        result.unshift(value);            
-        }
+        result.unshift(value);
+    }
     return result.join(" ");
 
 }

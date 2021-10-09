@@ -1,4 +1,4 @@
-function solve(...arr) {    
+function solve(...arr) {
     let separator = arr[1].toString()
     console.log(arr[0].join(separator));
 }

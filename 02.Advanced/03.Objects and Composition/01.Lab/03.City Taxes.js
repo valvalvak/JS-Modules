@@ -1,6 +1,6 @@
-function createRecord(name, population, treasury) {
+function createRecord(name,population,treasury) {
     return {
-        name, population, treasury,
+        name,population,treasury,
         taxRate: 10,
         collectTaxes() {
             this.treasury += this.population * this.taxRate;

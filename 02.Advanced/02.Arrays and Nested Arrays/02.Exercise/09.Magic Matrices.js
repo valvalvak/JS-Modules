@@ -1,12 +1,12 @@
 function solve(array) {
-    function sumRow(rowArray){
-        return rowArray.reduce((a, b) => a + b);
+    function sumRow(rowArray) {
+        return rowArray.reduce((a,b) => a + b);
     }
     let sum = sumRow(array[0]);
-    for (let row of array){
-        if (sum == sumRow(row)){
+    for(let row of array) {
+        if(sum == sumRow(row)) {
             continue;
-        }else{
+        } else {
             return false;
         }
     }

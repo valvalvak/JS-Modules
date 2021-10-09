@@ -21,10 +21,10 @@
 //     return result;
 // }
 
-function solve(array){
+function solve(array) {
     let biggestNum = Number.MIN_SAFE_INTEGER;
     const result = array.filter((element) => {
-        if (element > biggestNum){
+        if(element > biggestNum) {
             biggestNum = element;
             return true
         }

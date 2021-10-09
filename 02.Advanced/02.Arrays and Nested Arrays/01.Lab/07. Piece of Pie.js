@@ -1,8 +1,8 @@
-function solve(...params){
+function solve(...params) {
     let result;
     let start = params[0].indexOf(params[1]);
-    let end  = params[0].indexOf(params[2]);
-    result = params[0].slice(start, end + 1);
+    let end = params[0].indexOf(params[2]);
+    result = params[0].slice(start,end + 1);
     return result;
 }
 

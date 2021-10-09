@@ -1,7 +1,7 @@
 function solve(twoDimensionMatrix) {
     let result = Number(twoDimensionMatrix[0][0]);
-    for (let array of twoDimensionMatrix){
-        if (result < Math.max(...array)){
+    for(let array of twoDimensionMatrix) {
+        if(result < Math.max(...array)) {
             result = Math.max(...array);
         }
     }

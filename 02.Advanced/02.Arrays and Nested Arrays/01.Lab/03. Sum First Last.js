@@ -1,7 +1,7 @@
-function solve(array){
+function solve(array) {
     let a = Number(array[0]);
-    let b = Number(array[array.length-1]);
-    let res = a+b;
+    let b = Number(array[array.length - 1]);
+    let res = a + b;
     return res
 
 }

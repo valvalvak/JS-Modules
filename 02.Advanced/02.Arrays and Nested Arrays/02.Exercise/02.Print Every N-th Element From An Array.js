@@ -1,8 +1,8 @@
 function solve(...params) {
     let array = params[0];
-    let step = params[1];    
+    let step = params[1];
     let result = [];
-    for (let s = 0; s < array.length; s+=step){
+    for(let s = 0;s < array.length;s += step) {
         result.push(array[s]);
     }
     return result;

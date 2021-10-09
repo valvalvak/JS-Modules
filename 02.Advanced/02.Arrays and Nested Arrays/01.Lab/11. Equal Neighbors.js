@@ -1,21 +1,21 @@
 function solve(matrix) {
     let result = 0;
-    for (let r = 0; r < matrix.length; r++) {
+    for(let r = 0;r < matrix.length;r++) {
         let row = matrix[r];
-        for (let c = 0; c < row.length; c++) {
+        for(let c = 0;c < row.length;c++) {
             let currentElement = matrix[r][c];
             let rightElement;
             let bottomElement;
-            
-            if (c + 1 < matrix[r].length){
-                rightElement = matrix[r][c+1];
-                if (currentElement === rightElement) {
+
+            if(c + 1 < matrix[r].length) {
+                rightElement = matrix[r][c + 1];
+                if(currentElement === rightElement) {
                     result += 1;
-                } 
+                }
             }
-            if (r + 1 < matrix.length){
+            if(r + 1 < matrix.length) {
                 bottomElement = matrix[r + 1][c];
-                if (currentElement === bottomElement) {
+                if(currentElement === bottomElement) {
                     result += 1;
                 }
             }

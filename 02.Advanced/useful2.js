@@ -18,18 +18,18 @@
 //     };
 //     return stringResult;
 //   }
-function getPascal(text) {
-    let currentSolution = "";
-    let strArray = text.split(" ");
-    strArray.forEach(element => {
-      let strEl = element.toLowerCase();
-      currentSolution += strEl[0].toUpperCase() + strEl.substring(1);
-    });
-    return currentSolution;
-  }
+// function getPascal(text) {
+//     let currentSolution = "";
+//     let strArray = text.split(" ");
+//     strArray.forEach(element => {
+//       let strEl = element.toLowerCase();
+//       currentSolution += strEl[0].toUpperCase() + strEl.substring(1);
+//     });
+//     return currentSolution;
+//   }
 
-// let result = getCamel("this is an example");
+// // let result = getCamel("this is an example");
+// // console.log(result);
+
+// let result = getPascal("secOND eXamPLE");
 // console.log(result);
-
-let result = getPascal("secOND eXamPLE");
-console.log(result);

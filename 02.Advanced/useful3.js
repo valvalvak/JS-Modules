@@ -10,3 +10,14 @@
 
 // thisOne();
 // thisTwo();
+
+// let obj = {
+//     "one": 1,
+//     "two": 2,
+//     "three": 3,
+// }
+// let counter = 0;
+// for (let key in obj) {
+//     counter++;
+// }
+// console.log(counter)

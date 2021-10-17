@@ -1,5 +1,5 @@
 const testNumbers = require('./testNumbers');
-const { describe } = require('mocha');
+const { describe } = require('mocha', 'chai');
 
 describe("Test Numbers", () => {
     describe("sumNumbers", () => {

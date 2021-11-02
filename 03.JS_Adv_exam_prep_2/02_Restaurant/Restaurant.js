@@ -4,14 +4,21 @@ class Restaurant {
         this.menu = {};
         this.stockProducts = {};
         this.history = [];
+    };
+    getObjArray(obj) {
+        let meals = [];
+        for (let meal in obj) {
+            meals.push(meal)
+        }
+        return meals;
     }
-
+    
     loadProducts(products) {
         let stringResultLog = [];
 
-        products.forEach(element => {
+        for (let element of products) {
 
-            [productName, productQuantity, productTotalPrice] = element.split(" ");
+            let [productName, productQuantity, productTotalPrice] = element.split(" ");
 
             if (productTotalPrice <= this.budgetMoney) {
 
@@ -27,45 +34,51 @@ class Restaurant {
             } else {
                 stringResultLog.push(`There was not enough money to load ${productQuantity} ${productName}`)
             };
+        };
+        return stringResultLog.join('\n');
+    };
 
-            return stringResultLog.join('\n');
-        });
-
-
-    }
-
-    countObjProp(obj) {
-        let counter = 0;
-        for (let _ in obj) {
-            counter++;
-        }
-        return counter;
-    }
+    
 
     addToMenu(meal, neededProducts, price) {
-        [productName, productQuantity] = neededProducts.split(" ");
-        if (this.menu.hasOwnProperty(meal)) {
-            return `The ${meal} is already in the our menu, try something different.` // must be: "The meal is on the menu".
-        } else {
-            let mealsOnMenu = this.countObjProp(this.menu);
-            if (mealsOnMenu == 1) {
-                
-            }
-        }
+        for (let element of neededProducts) {
+            let [productName, productQuantity] = element.split(" ");
+            if (this.menu.hasOwnProperty(meal)) {
+                return `The ${meal} is already in the our menu, try something different.` // must be: "The meal is on the menu".
+            } else {
+                if (this.getObjArray(this.menu).length == 1) {
+                    this.menu[meal] = price * productQuantity;
+                    this.menu[meal][products] = [];
+                    this.menu[meal].products.push(productName)
+                    return `Great idea! Now with the ${meal} we have 1 meal in the menu, other ideas?`
+                } else {
+                    this.menu[meal] = price;
+                    return `Great idea! Now with the ${meal} we have ${this.getObjArray(this.menu).length} meals in the menu, other ideas?`
+                };
+            };
+        };
+    };
 
-    }
     showTheMenu() {
-
-    }
-    makeTheOrder() {
+        let result = [];
+        for (let meal in this.menu) {
+            result.push(`${meal} - $ ${this.menu[meal]}`);
+        };
+        if (result.length < 1) {
+            return "Our menu is not ready yet, please come later..."
+        } else {
+            return result
+        };
+    };
+    makeTheOrder(meal) {
 
     }
 
 }
 
 //input #1
-let kitchen = new Restaurant(1000);
-console.log(kitchen.loadProducts(['Banana 10 5', 'Banana 20 10', 'Strawberries 50 30', 'Yogurt 10 10', 'Yogurt 500 1500', 'Honey 5 50']));
+// let kitchen = new Restaurant(1000);
+// console.log(kitchen.loadProducts(['Banana 10 5', 'Banana 20 10', 'Strawberries 50 30', 'Yogurt 10 10', 'Yogurt 500 1500', 'Honey 5 50']));
 
 // Output #1
 // Successfully loaded 10 Banana
@@ -88,8 +101,8 @@ console.log(kitchen.addToMenu('Pizza', ['Flour 0.5', 'Oil 0.2', 'Yeast 0.5', 'Sa
 
 
 //input #3
-let kitchen = new Restaurant(1000);
-console.log(kitchen.showTheMenu());
+// let kitchen = new Restaurant(1000);
+// console.log(kitchen.showTheMenu());
 
 // Output #3
 // frozenYogurt - $ 9.99

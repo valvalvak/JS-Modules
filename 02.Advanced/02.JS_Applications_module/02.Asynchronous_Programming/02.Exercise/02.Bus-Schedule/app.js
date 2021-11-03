@@ -1,7 +1,12 @@
-function solve() {
+async function solve() {
+
 
     function depart() {
-        console.log('Depart TODO...');
+        const url = `http://localhost:3030/jsonstore/bus/schedule/depot`;
+        const response = await fetch(url);
+        const data = await response.json();
+        console.log(data);
+
     }
 
     function arrive() {

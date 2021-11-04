@@ -1,27 +1,30 @@
 async function getInfo() {
-    const busStopNameElement = document.getElementById('stopName');
-    const timeTableElement = document.getElementById('buses');
-    const stopID = document.getElementById('stopID').value;
+    // console.log('It works')
+    const stopID = document.getElementById('stopId').value;
+    const busStopNameEl = document.getElementById('stopName');
+    const timeTableEl = document.getElementById('buses');
 
-    const url = `http://localhost:3030/jsonstore/bus/buinfo/${stopID}`;
-    // const res = await fetch(url);
-    // const data = await res.json();
+    const url = `http://localhost:3030/jsonstore/bus/businfo/${stopID}`;
 
-    try {
+    try { 
+        busStopNameEl.textContent = "Just a moment..."
+        timeTableEl.replaceChildren();
         const res = await fetch(url);
-        const data = await res.json();
+
         if (res.status != 200) {
             throw new Error('Stop ID not found');
-        }  
+        }
+        const data = await res.json();
 
+        busStopNameEl.textContent = data.name;
 
-        busStopNameElement.textContent = data.name;
-        Object.entries(data.buses).forEach((b, v) => {
-            const liElement = document.createElement('li');
-            liElement.textContent = `Bus ${b} arrives in ${v} minutes`;
-            timeTableElement.appendChild(liElement);
+        Object.entries(data.buses).forEach(el => {
+            let [currentBus, minutes] = el;
+            const liEl = document.createElement('li');
+            liEl.textContent = `Bus ${currentBus} arrives in ${minutes} minutes`;
+            timeTableEl.appendChild(liEl);
         })
     } catch (error) {
-        alert(error.message);
+        busStopNameEl.textContent = 'Error';
     }
 }

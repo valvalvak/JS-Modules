@@ -4,18 +4,16 @@ async function getInfo() {
     const stopID = document.getElementById('stopID').value;
 
     const url = `http://localhost:3030/jsonstore/bus/buinfo/${stopID}`;
-    
     // const res = await fetch(url);
     // const data = await res.json();
-    // console.log(data);
 
     try {
         const res = await fetch(url);
+        const data = await res.json();
         if (res.status != 200) {
             throw new Error('Stop ID not found');
-        }
-        const data = await res.json();
-        console.log(data);
+        }  
+
 
         busStopNameElement.textContent = data.name;
         Object.entries(data.buses).forEach((b, v) => {
@@ -24,6 +22,6 @@ async function getInfo() {
             timeTableElement.appendChild(liElement);
         })
     } catch (error) {
-        alert(error.message);   
+        alert(error.message);
     }
 }

@@ -3,3 +3,8 @@ function attachEvents() {
 }
 
 attachEvents();
+
+async function getLocationCode(name) {
+    const url = ''
+    
+}

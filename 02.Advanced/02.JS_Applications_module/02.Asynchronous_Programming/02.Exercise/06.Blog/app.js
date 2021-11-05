@@ -3,20 +3,45 @@ function attachEvents() {
     document.getElementById('btnViewPost').addEventListener('click', displayPost);
 
 }
+attachEvents();
 
-function displayPost() {
+async function displayPost() {
+    const titleElement = document.getElementById('post-title')
+    const bodyElement = document.getElementById('post-body')
+    const ulElement = document.getElementById('post-comments');
+    const selectedID = document.getElementById('posts').value;
+    
+    
+    titleElement.textContent = 'Loading...';
+    bodyElement.textContent = ''
+    ulElement.replaceChildren();
+    
+    const [post, comments] = await Promise.all([
+        getPostByID(selectedID),
+        getCommentsByPostID(selectedID)
+    ]);
 
-}
+    titleElement.textContent = post.title;
+    bodyElement.textContent = post.body;
+    
+    comments.forEach(c => {
+        const liElement = document.createElement('li');
+        liElement.textContent = c.text;
+        ulElement.appendChild(liElement);
+    })
+    }
 
 async function getAllPosts() {
-    const postsURL = 'http://localhost:3030/jsonstore/blog/posts';
+    const url = 'http://localhost:3030/jsonstore/blog/posts';
 
-    const postsRes = await fetch(postsURL)
-    const postsData = await postsRes.json();
+    const res = await fetch(url)
+    const data = await res.json();
+
     const selectElement = document.getElementById('posts');
     selectElement.replaceChildren();
+    // console.log(data)
 
-    Object.values(postsData).forEach(p => {
+    Object.values(data).forEach(p => {
         const optionElement = document.createElement('option');
         optionElement.textContent = p.title;
         optionElement.value = p.id;

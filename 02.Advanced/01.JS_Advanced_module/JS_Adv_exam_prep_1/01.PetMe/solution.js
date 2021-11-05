@@ -1,4 +1,4 @@
-function solve() {
+ function solve() {
     const fields = document.querySelectorAll("#container input");
     const addBtn = document.querySelector("#container button");
     const petList = document.querySelector("#adoption ul");
@@ -9,7 +9,14 @@ function solve() {
         age: fields[1],
         kind: fields[2],
         owner: fields[3],
-    };
+     };
+     
+     /*
+     const pet = document.createElement('li')
+     pet.innerHTML = ...
+        <strong>${name}...
+     */
+     
 
     addBtn.addEventListener('click', addPet);
 
@@ -26,6 +33,7 @@ function solve() {
         };
 
         const contactBtn = e("button", {}, "Contact with owner");
+        
 
         const pet = e("li", {},
             e("p", {},

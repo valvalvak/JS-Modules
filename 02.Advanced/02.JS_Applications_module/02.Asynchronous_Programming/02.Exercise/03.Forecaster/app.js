@@ -5,10 +5,11 @@ function attachEvents() {
 attachEvents();
 async function getForecast(name) {
     const cityCode = await getCityCode(name);
-    const [currentCity, nextCity]Promise.all([
-        getCurrentCityData(cityCode),
-        getNextCityData(cityCode)
+    const [currentForecast, upcomingForecast] = Promise.all([
+        getCurrentCityForecastData(cityCode),
+        getNextCityForecastData(cityCode)
     ])
+    return {currentForecast, upcomingForecast}
 } 
 async function getCityCode(name) {
     const url = 'http://localhost:3030/jsonstore/forecaster/locations'
@@ -25,13 +26,13 @@ async function getCityCode(name) {
         // ....textContent = `${error.message}`;
     }
 }
-async function getCurrentCityData(code) {
+async function getCurrentCityForecastData(code) {
     const url = 'http://localhost:3030/jsonstore/forecaster/today/' + code
     const response = await fetch(url);
     const data = await response.json();
     return data
 }
-async function getNextCityData(code) {
+async function getNextCityForecastData(code) {
     const url = 'http://localhost:3030/jsonstore/forecaster/upcoming/' + code
     const response = await fetch(url);
     const data = await response.json();

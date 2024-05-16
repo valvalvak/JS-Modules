@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Form Input</h1>
+
+    <form>
+        num1: <input type="text" name="num1" /> <br>
+        num2: <input type="text" name="num2" /> <br>
+        sum: <input type="text" name="sum" /> <br>
+        <input type="button" value="Sum" onclick="calculate()" />
+    </form>
+    <form>
+        test: <input type="text" name="testTextInput" /> <br>
+        output: <input type="text" name="testTextOutput"> <br>
+        <input type="button" value="Test" onclick="print_on_screen()" />
+    </form>
+
+    <script>
+        function calculate() {
+            let num1 = document.getElementsByName('num1')[0].value;
+            let num2 = document.getElementsByName('num2')[0].value;
+            let sum = Number(num1) + Number(num2);
+            document.getElementsByName('sum')[0].value = sum;
+        }
+        function print_on_screen(){
+            let test = document.getElementsByName('test')[0].value;
+            document.getElementsByName('testTextOutput')[0].value = test;
+        }
+    </script>
+
+</body>
+
+</html>

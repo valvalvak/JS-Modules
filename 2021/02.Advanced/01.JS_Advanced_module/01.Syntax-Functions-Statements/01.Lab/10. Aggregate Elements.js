@@ -11,9 +11,6 @@ function solve(elements){
         }
         console.log(val);
     }
-    
-
-    
 }
 // solve([1, 2, 3]);
 // solve([2, 4, 8, 16]);

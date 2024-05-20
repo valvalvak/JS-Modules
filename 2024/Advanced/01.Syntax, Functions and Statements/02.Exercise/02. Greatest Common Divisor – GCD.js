@@ -20,3 +20,11 @@ function gcd_two_numbers(x, y) {
     // Return the GCD, which is stored in x after the loop.
     return x;
 }
+
+function solve(x, y){
+    const gcd = (x, y) => (!y ? x : gcd(y, x % y));
+    console.log(gcd(x, y))
+}
+solve(15, 5)
+
+console.log(gcd_two_numbers(15, 5))

@@ -16,11 +16,18 @@ function colorize() {
     // }
     
     // MY TEST SOLUTION
-    let rows = document.querySelectorAll("table tr");
-    for (let i = 0; i < rows.length; i++) {
-        if (i % 2 != 0) {
-            rows[i].style.background = "teal"
-        }
+    // let rows = document.querySelectorAll("table tr");
+    // for (let i = 0; i < rows.length; i++) {
+    //     if (i % 2 != 0) {
+    //         rows[i].style.background = "teal"
+    //     }
+    // }
+
+    // IVO PAPAZOV SOLUTION
+    const evenRowElements = document.querySelectorAll('table tr:nth-child(even)')
+    
+    for(const rowElement of evenRowElements){
+        rowElement.style.backgroundColor = 'teal';
     }
 
 }
